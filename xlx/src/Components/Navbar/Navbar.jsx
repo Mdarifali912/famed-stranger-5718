@@ -25,12 +25,12 @@ import {
     ChevronRightIcon,
   } from '@chakra-ui/icons';
   
-  export default function WithSubnavigation() {
+  export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
       <Box  >
-        
+            
         <Flex
           bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
@@ -61,7 +61,7 @@ import {
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
               <Box boxSize='sm'>
-  <Image  h={71} w={115} src='https://lh3.googleusercontent.com/8I_RfnnEb8apo-JcyXHYgFCZF1oC_AeigyvnP4wZYRHzEf-nzh0I8bma0jGhiGuWw7wFq4ny01ip6wpjwunaZngrQ_Yfj5GOZGOwolS9FR8MKa9wEiYyzNt-Wfuvf14MJ3Wi3jov_sDchwf_bR6D_2wRGt6HYIfcd3I-T1HwttalwkpwLCZ5ChEyVqXvOWt2myt7nG1TSMSVEbI9b-5yIFBTsnJY2LKycZKGHvTIXyFYlzG1R052_PCAfVM9Ioz_J2Hf7um6MAFLVLTwkG_h57Fmk-WHEBVl701SRS7cGofcbLwIITA0e3RI3B42AhqQC4Xg1BR3Q7a4Vo1d8fycjzGDFk17C86KJBrxOQxYoiI_Uox9g-7Bx9XC4plHidcNCZTc02vmWOSuco9r4Pp7AMr1FoxAAN_peu4FRFe6nwVI8cqA8esYXYeYqN7zmJUK3Rl0CJSwBviWxUaES4JMn58hZwQGd7WkFu2WuGFovqPIijKVpjzJLICs0oNoDGH01hwexLKxuu2TOXTZ6C5lXTxiOrYYBG9dFwJUZY-AJo6MMdPEPVP62IoTwrrzx02i2JQ2GE0Pe2zFqanDc3sKz7FLe0vW2RvmtQ_lrx9B-s6U6gMz4d6tblJDt8wp2ggG-TylIr15ThleidZI7ZBpPJBIh9KnQxVd4CEHujU2cfk2-dTfLgth8VUHgtCr69jymiVJkPNjQvZ5EIBE8HBVtoNKRtDIN4BALFoywfARnVjzlQa72eSshSvXyMBpGFnpfODtQfqgh718fjiFOrp8_1jUXehRop-eCfAIrASH7lClklXd7HLDY9taD620mvbPW49Rp1GEGj6iQUM72J3AmcBY0rymaHO1WPS1yguzXEnVRxyXyirGicLZU6DdWi3yZ-z1bf5Wwewp-VFMJwIiTD6Gp2zLd8W32Q906sn4sRBA_A=s500-no?authuser=0' alt='Dan Abramov' />
+  <Image mt="10px" ml="50px"  h={50} w={125} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyvZ4LqmbekgZhBQh6a4rMN4JNWn2NIdFuGA&usqp=CAU' alt='Dan Abramov' />
 </Box>
 
             </Text>
@@ -82,42 +82,55 @@ import {
             <Button borderColor={0} fontSize={23} h={20} w={143} colorScheme='grey-300' variant='outline'>
     search
   </Button>
-            <Select fontSize={23} border={0} h={20} w={-54} placeholder='English'>
+            <Select fontSize={23} border={0} h={20} w={-54}>
   <option value='option1'>Hindi</option>
+  <option value='option1'>English</option>
   
   
 </Select>
-              <DesktopNav />
-              
-            </Flex>
-          </Flex>
-  
-          <Stack
+              {/* <DesktopNav /> */}
+
+            <Stack
+            mt={4}
+            ml={12}
+            gap={6}
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
+            
             <Button 
-              as={'a'}
-              fontSize={'sm'}
-              fontWeight={400}
-              variant={'link'}
-              href={'#'}>
-              Login In
+               borderRadius="40px"
+              display={{ base: 'none', md: 'inline-flex' }}
+              fontSize={'lg'}
+              fontWeight={600}
+              color={'white'}
+              bg={'teal.400'}
+              href={'#'}
+              _hover={{
+                bg: 'teal.300',
+              }}>
+              Log In
             </Button>
             <Button
               display={{ base: 'none', md: 'inline-flex' }}
-              fontSize={'sm'}
+              fontSize={'lg'}
               fontWeight={600}
               color={'white'}
-              bg={'pink.400'}
+              bg={'teal.400'}
               href={'#'}
               _hover={{
-                bg: 'pink.300',
+                bg: 'teal.300',
               }}>
               + Sell
             </Button>
           </Stack>
+              
+            </Flex>
+           
+          </Flex>
+  
+          
         </Flex>
   
         <Collapse in={isOpen} animateOpacity>
