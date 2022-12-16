@@ -1,5 +1,5 @@
 
-
+import { Navigate } from 'react-router-dom';
 import {
     Box,
     Flex,
@@ -10,6 +10,7 @@ import {
     Collapse,
     Icon,
     Link,
+    Navlink,
     Popover,
     PopoverTrigger,
     PopoverContent,
@@ -24,9 +25,14 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+  import Login from '../Login/Login';
   
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
+
+
+
+  
   
     return (
       <Box  >
@@ -99,19 +105,24 @@ import {
             direction={'row'}
             spacing={6}>
             
-            <Button 
+            
+            <Button
+            
                borderRadius="40px"
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'lg'}
               fontWeight={600}
               color={'white'}
               bg={'teal.400'}
-              href={'#'}
+            
               _hover={{
                 bg: 'teal.300',
               }}>
               Log In
             </Button>
+            
+            
+            
             <Button
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'lg'}
