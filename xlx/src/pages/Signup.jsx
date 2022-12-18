@@ -16,10 +16,31 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+  import { useNavigate } from 'react-router-dom';
   
   export default function Signup() {
     const [showPassword, setShowPassword] = useState(false);
-  
+    const [form,setform]=useState({email:"",password:""});
+
+    const handlechange=(e)=>{
+        setform({...form,[e.target.id]:e.target.value})
+    }
+  const  handlesignup=()=>{
+
+    const newobj={Email:form.email,Password:form.password}
+       fetch("http://localhost:8080/cred",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(newobj)
+       })
+       navigate("/login")
+    //    console.log(newobj)
+    }
+      
+    const navigate=useNavigate()
+
     return (
       <Flex
         minH={'100vh'}
@@ -57,12 +78,12 @@ import {
               </HStack>
               <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input id="email" type="email" value={form.email} onChange={handlechange} />
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
-                  <Input type={showPassword ? 'text' : 'password'} />
+                  <Input id="password" type={showPassword ? 'text' : 'password'} onChange={handlechange} value={form.password}/>
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
@@ -76,6 +97,8 @@ import {
               </FormControl>
               <Stack spacing={10} pt={2}>
                 <Button
+                onClick={handlesignup}
+
                   loadingText="Submitting"
                   size="lg"
                   bg={'blue.400'}
@@ -88,7 +111,7 @@ import {
               </Stack>
               <Stack pt={6}>
                 <Text align={'center'}>
-                  Already a user of OLX ? <Link color={'blue.400'}>Login</Link>
+                  Already a user? <Link color={'blue.400'}>Login</Link>
                 </Text>
               </Stack>
             </Stack>

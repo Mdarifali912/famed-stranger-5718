@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "cred": {
+    "Email": "mdarifali912@gmail.com",
+    "Password": "123"
+  }
+}

@@ -1,9 +1,9 @@
 import React from 'react'
 import {Route,Routes} from "react-router-dom"
-import Home from "../Home/Home"
-import Login from "../Login/Login"
-import Category from '../category/Category'
-import Signup from '../Signup/Signup'
+import Home from "../pages/Home"
+import Login from "../pages/Login"
+import Category from './Category'
+import Signup from '../pages/Signup'
 
 function AllRoutes() {
   return (

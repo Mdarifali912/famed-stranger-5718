@@ -1,12 +1,12 @@
-import Navbar from './Components/Navbar/Navbar';
+import Navbar from './Components/Navbar';
 import './App.css';
-import Category from './Components/category/Category';
-import Banner from './Components/Banner/Banner';
-import Home from './Components/Home/Home';
-import Footer from './Components/Footer/Footer'
-import Login from './Components/Login/Login'
-import Signup from './Components/Signup/Signup';
-import AllRoutes from './Components/AllRoutes/AllRoutes';
+import Category from './Components/Category';
+import Banner from './Components/Banner';
+import Home from './pages/Home';
+import Footer from './Components/Footer'
+import Login from './pages/Login'
+import Signup from './pages/Signup';
+import AllRoutes from './Components/AllRoutes';
 
 
 function App() {
@@ -14,6 +14,8 @@ function App() {
     <div className="App">
       
       <Navbar/>
+      {/* <Signup/> */}
+      {/* <Home/> */}
       <AllRoutes/>
       <Footer/>
     
