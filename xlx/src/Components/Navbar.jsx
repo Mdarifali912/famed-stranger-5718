@@ -1,5 +1,5 @@
 
-import { Navigate } from 'react-router-dom';
+import { Navigate,useNavigate } from 'react-router-dom';
 import {
     Box,
     Flex,
@@ -11,6 +11,7 @@ import {
     Icon,
     Link,
     Navlink,
+    
     Popover,
     PopoverTrigger,
     PopoverContent,
@@ -25,22 +26,23 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-  import Login from '../Login/Login';
+  import Login from '../pages/Login';
   
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
 
-
-
+      
+   const navigate=useNavigate()
   
   
     return (
-      <Box  >
+      <Box >
             
         <Flex
+        
           bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
-          minH={'60px'}
+          
           py={{ base: 2 }}
           px={{ base: 4 }}
           borderBottom={1}
@@ -79,6 +81,8 @@ import {
   <option value='option3'>Delhi</option>
 </Select>
 
+   
+
 
             {/* <Input w={-3} marginStart={-0}  placeholder='Basic usage' /> */}
 
@@ -94,7 +98,7 @@ import {
   
   
 </Select>
-              {/* <DesktopNav /> */}
+              <DesktopNav />
 
             <Stack
             mt={4}
@@ -107,7 +111,12 @@ import {
             
             
             <Button
-            
+                onClick={()=>{
+                    navigate("/login")
+                }}
+                
+
+                
                borderRadius="40px"
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'lg'}
@@ -124,6 +133,7 @@ import {
             
             
             <Button
+            
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'lg'}
               fontWeight={600}

@@ -9,13 +9,43 @@ import {
     Link,
     Button,
     Heading,
+    
     Text,
     useColorModeValue,
   } from '@chakra-ui/react';
+  import { useState } from 'react';
+  import { useNavigate } from 'react-router-dom';
   
   export default function Login() {
+    const [check,setcheck]=useState({Email:"",Password:""});
+    const [email,setemail]=useState("");
+    const [password,setpassword]=useState("")
+    
+    const navigate=useNavigate()
+
+
+    const handlesignin=()=>{
+        fetch("http://localhost:8080/cred").then((res)=>res.json()).then((res)=>{
+            setcheck(res)
+        });
+        if(email && password){
+            if(check.Email===email && check.Password===password){
+                alert("Login Successfully")
+                navigate("/")
+            }else{
+                alert("wrong details")
+            }
+        }else{
+            alert("fill details")
+        }
+
+       
+    }
+
+
+
     return (
-      <Flex 
+      <Flex
         minH={'100vh'}
         align={'center'}
         justify={'center'}
@@ -35,11 +65,11 @@ import {
             <Stack spacing={4}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input type="email" value={email} onChange={(e)=>setemail(e.target.value)}/>
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password" />
+                <Input type="password" value={password} onChange={(e)=>setpassword(e.target.value)} />
               </FormControl>
               <Stack spacing={10}>
                 <Stack
@@ -50,6 +80,7 @@ import {
                   <Link color={'blue.400'}>Forgot password?</Link>
                 </Stack>
                 <Button
+                onClick={handlesignin}
                   bg={'blue.400'}
                   color={'white'}
                   _hover={{
