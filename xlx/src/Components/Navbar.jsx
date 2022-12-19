@@ -69,7 +69,9 @@ import {
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
               <Box boxSize='sm'>
-  <Image mt="10px" ml="50px"  h={50} w={125} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyvZ4LqmbekgZhBQh6a4rMN4JNWn2NIdFuGA&usqp=CAU' alt='Dan Abramov' />
+  <Image _hover={"red"} onClick={()=>{
+                    navigate("/home")
+                }}  mt="10px" ml="50px"  h={50} w={125} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyvZ4LqmbekgZhBQh6a4rMN4JNWn2NIdFuGA&usqp=CAU' alt='Dan Abramov' />
 </Box>
 
             </Text>
@@ -114,9 +116,7 @@ import {
                 onClick={()=>{
                     navigate("/login")
                 }}
-                
-
-                
+                 
                borderRadius="40px"
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'lg'}
@@ -129,11 +129,31 @@ import {
               }}>
               Log In
             </Button>
+
+            <Button
+                onClick={()=>{
+                    navigate("/signup")
+                }}
+                 
+               borderRadius="40px"
+              display={{ base: 'none', md: 'inline-flex' }}
+              fontSize={'lg'}
+              fontWeight={600}
+              color={'white'}
+              bg={'teal.400'}
+            
+              _hover={{
+                bg: 'teal.300',
+              }}>
+              Sign up
+            </Button>
             
             
             
             <Button
-            
+                onClick={()=>{
+                  navigate("/singleproduct")
+              }}
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'lg'}
               fontWeight={600}

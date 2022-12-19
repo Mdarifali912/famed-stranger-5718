@@ -1,8 +1,11 @@
 import React from 'react'
 
 function Offer() {
+
   return (
-    <div>Offer</div>
+    <div>
+        offer here 50% off
+    </div>
   )
 }
 
