@@ -2,6 +2,9 @@ import React from 'react'
 import {Divider,ButtonGroup,Image,Button,Box,StackDivider,Text,Stack,Heading, Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 
 function Home() {
+
+
+    
   return (
     <div>
 
