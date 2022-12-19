@@ -7,15 +7,21 @@ import Footer from './Components/Footer'
 import Login from './pages/Login'
 import Signup from './pages/Signup';
 import AllRoutes from './Components/AllRoutes';
+import Singleproduct from './Components/Singleproduct';
+import Products from './Components/Products';
 
 
 function App() {
+
+  
   return (
     <div className="App">
       
       <Navbar/>
       {/* <Signup/> */}
-      {/* <Home/> */}
+      {/* <Singleproduct/> */}
+      {/* <Products/> */}
+      <Home/>
       <AllRoutes/>
       <Footer/>
     

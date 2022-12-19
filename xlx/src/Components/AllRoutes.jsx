@@ -4,6 +4,8 @@ import Home from "../pages/Home"
 import Login from "../pages/Login"
 import Category from './Category'
 import Signup from '../pages/Signup'
+import Products from "../Components/Products"
+import Singleproduct from '../Components/Singleproduct'
 
 function AllRoutes() {
   return (
@@ -13,6 +15,8 @@ function AllRoutes() {
   <Route path="/login" element={<Login />}></Route>
   <Route path="/category" element={<Category />}></Route>
   <Route path="/signup" element={<Signup />}></Route>
+  <Route path="/products" element={<Products />}></Route>
+  <Route path="/singleproduct" element={<Singleproduct />}></Route>
 
 
   
